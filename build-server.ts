@@ -1,9 +1,7 @@
 if (import.meta.main) {
-  const OUTDIR = "dist";
-  await Bun.$`rm -r ${OUTDIR}`;
   await Bun.build({
     entrypoints: ["src/server.ts"],
-    outdir: OUTDIR,
+    outdir: "dist",
     target: "bun",
     sourcemap: "linked",
   });
