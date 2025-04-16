@@ -1,6 +1,6 @@
-import { trpc } from "@/client/api";
+import { trpcQuery } from "@/client/trpc";
+import { useQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
 import logo from "./assets/logo.svg";
 
 export const Route = createFileRoute("/")({
@@ -8,11 +8,7 @@ export const Route = createFileRoute("/")({
 });
 
 function App() {
-  useEffect(() => {
-    trpc.hello.query().then((data) => {
-      console.log("Hello world response:", data);
-    });
-  }, []);
+  const { data } = useQuery(trpcQuery.hello.queryOptions());
 
   return (
     <div className="flex h-screen flex-col items-center justify-center">
@@ -26,6 +22,7 @@ function App() {
       <a href="https://tanstack.com" target="_blank" rel="noopener noreferrer">
         Learn TanStack
       </a>
+      <div>{data}</div>
     </div>
   );
 }
