@@ -1,7 +1,7 @@
 import { trpc } from "@/client/api";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
-import logo from "../logo.svg";
+import logo from "./assets/logo.svg";
 
 export const Route = createFileRoute("/")({
   component: App,

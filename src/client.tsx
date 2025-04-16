@@ -5,7 +5,7 @@ import ReactDOM from "react-dom/client";
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen.ts";
 
-import reportWebVitals from "./reportWebVitals.ts";
+import reportWebVitals from "./client/reportWebVitals.ts";
 import "./styles.css";
 
 // Create a new router instance

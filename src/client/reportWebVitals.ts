@@ -1,4 +1,4 @@
-const reportWebVitals = (onPerfEntry?: () => void) => {
+export default function reportWebVitals(onPerfEntry?: () => void) {
   if (onPerfEntry && onPerfEntry instanceof Function) {
     import("web-vitals").then(({ onCLS, onINP, onFCP, onLCP, onTTFB }) => {
       onCLS(onPerfEntry);
@@ -8,6 +8,4 @@ const reportWebVitals = (onPerfEntry?: () => void) => {
       onTTFB(onPerfEntry);
     });
   }
-};
-
-export default reportWebVitals;
+}
