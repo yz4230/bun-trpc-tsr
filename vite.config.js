@@ -23,4 +23,11 @@ export default defineConfig({
   build: {
     outDir: join("dist", "public"),
   },
+  server: {
+    proxy: {
+      "/trpc": {
+        target: "http://localhost:3001",
+      },
+    },
+  },
 });

@@ -1,4 +1,6 @@
+import { trpc } from "@/client/api";
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 import logo from "../logo.svg";
 
 export const Route = createFileRoute("/")({
@@ -6,6 +8,12 @@ export const Route = createFileRoute("/")({
 });
 
 function App() {
+  useEffect(() => {
+    trpc.hello.query().then((data) => {
+      console.log("Hello world response:", data);
+    });
+  }, []);
+
   return (
     <div className="flex h-screen flex-col items-center justify-center">
       <img src={logo} alt="logo" className="size-60" />

@@ -6,7 +6,7 @@
     "dev": "conc bun:dev:client bun:dev:server",
     "dev:client": "vite --port 3000 --clearScreen=false",
     "dev:server": "bun --watch run --no-clear-screen src/server.ts",
-    "build": "concurrently bun:build:client bun:build:server",
+    "build": "NODE_ENV=production conc bun:build:client bun:build:server",
     "build:client": "vite build",
     "build:server": "bun run build-server.ts",
     "serve": "bun dist/server.js",
@@ -18,6 +18,8 @@
     "@tanstack/react-router": "^1.114.3",
     "@tanstack/react-router-devtools": "^1.114.3",
     "@tanstack/router-plugin": "^1.114.3",
+    "@trpc/client": "^11.1.0",
+    "@trpc/server": "^11.1.0",
     "es-toolkit": "^1.34.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
