@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import "../App.css";
 import logo from "../logo.svg";
 
 export const Route = createFileRoute("/")({
@@ -8,29 +7,17 @@ export const Route = createFileRoute("/")({
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/routes/index.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <a
-          className="App-link"
-          href="https://tanstack.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn TanStack
-        </a>
-      </header>
+    <div className="flex h-screen flex-col items-center justify-center">
+      <img src={logo} alt="logo" className="size-60" />
+      <p>
+        Edit <code>src/routes/index.tsx</code> and save to reload.
+      </p>
+      <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+        Learn React
+      </a>
+      <a href="https://tanstack.com" target="_blank" rel="noopener noreferrer">
+        Learn TanStack
+      </a>
     </div>
   );
 }
