@@ -1,4 +1,4 @@
-import { trpcQuery } from "@/client/trpc";
+import { tq } from "@/client/trpc";
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 import logo from "./assets/logo.svg";
@@ -8,7 +8,7 @@ export const Route = createFileRoute("/")({
 });
 
 function App() {
-  const { data } = useQuery(trpcQuery.hello.queryOptions());
+  const { data } = useQuery(tq.hello.queryOptions());
 
   return (
     <div className="flex h-screen flex-col items-center justify-center">

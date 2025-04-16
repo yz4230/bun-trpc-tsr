@@ -4,7 +4,7 @@ import { createTRPCClient, httpBatchLink } from "@trpc/client";
 import { createTRPCOptionsProxy } from "@trpc/tanstack-react-query";
 import { queryClient } from "./tanstack-query";
 
-export const trpcClient = createTRPCClient<AppRouter>({
+export const trpc = createTRPCClient<AppRouter>({
   links: [
     httpBatchLink({
       url: new URL(TRPC_ENDPOINT, location.origin),
@@ -12,7 +12,7 @@ export const trpcClient = createTRPCClient<AppRouter>({
   ],
 });
 
-export const trpcQuery = createTRPCOptionsProxy<AppRouter>({
-  client: trpcClient,
+export const tq = createTRPCOptionsProxy<AppRouter>({
+  client: trpc,
   queryClient,
 });
