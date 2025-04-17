@@ -1,4 +1,5 @@
 import { tq } from "@/client/trpc";
+import { Button } from "@/components/ui/button";
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 import logo from "./assets/logo.svg";
@@ -23,6 +24,7 @@ function App() {
         Learn TanStack
       </a>
       <div>{data}</div>
+      <Button className="w-xs">Hello</Button>
     </div>
   );
 }
